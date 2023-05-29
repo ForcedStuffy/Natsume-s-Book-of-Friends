@@ -14,7 +14,7 @@
 
 #### 1.1 界面设计
 
-![img](https://github.com/ForcedStuffy/Natsume-s-Book-of-Friends/tree/main/01/clip_image002.jpg)
+![img](https://github.com/ForcedStuffy/Natsume-s-Book-of-Friends/blob/main/01/clip_image002.jpg)
 
 图1-1 登录界面
 
