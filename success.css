@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    color: #f4f1de;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.shell {
+    width: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.button,
+.portrait {
+    background-color: #50536e;
+    width: 170px;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.portrait::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+    background-image: url("img/logo.jpg");
+    background-size: cover;
+    border: 10px solid #fff;
+}
+
+.information {
+    width: 220px;
+    background-color: #e07a5f;
+    transform: translate(-20px, -200px);
+    border-radius: 10px;
+    padding: 20px 0;
+    line-height: 0;
+    height: 0;
+    transition: .3s;
+    opacity: 0;
+
+}
+
+.portrait:hover .information {
+    opacity: 1;
+    line-height: 65px;
+    transform: translate(-20px, -10px);
+    height: auto;
+}
+
+.button:hover {
+    background-color: #d15a39;
+}
+
+.button li:hover {
+    background-color: #ffb29d;
+}
+
+.button ul li {
+    height: 0;
+    transition: .2s;
+    opacity: 0;
+    transform: translateY(-65px);
+    background-color: #e07a5f;
+}
+
+.button:hover li {
+    height: 65px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 名片 */
+.card {
+    /* 相对定位 */
+    position: relative;
+    width: 300px;
+    height: 450px;
+    margin: 20px;
+    background-color: #758a99;
+    border-radius: 20px;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 弹性布局 */
+    display: flex;
+    /* 元素纵向排列 */
+    flex-direction: column;
+    /* 居中 */
+    align-items: center;
+    color: #fff;
+    /* 阴影 */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    /* 不让其被挤压 */
+    flex-shrink: 0;
+}
+
+.card .photo img {
+    width: 100%;
+    height: 100%;
+    /* 保持原有尺寸比例，裁切长边 */
+    object-fit: cover;
+}
+
+/* 默认大图 */
+.card .photo {
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    overflow: hidden;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+
+/* 鼠标移入变小图 */
+.card:hover .photo {
+    top: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* 这里加个黑色到透明的渐变背景，可以更好的看清楚名字 */
+.card .photo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 50%, #222);
+}
+
+.card h1 {
+    position: absolute;
+    top: 370px;
+    transition: 0.5s;
+}
+
+.card:hover h1 {
+    top: 170px;
+}
+
+.card h2 {
+    margin-top: 220px;
+    width: 80%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.card p {
+    width: 90%;
+    text-indent: 32px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+
+.card a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 32px;
+    border-radius: 8px;
+}
+
+.card a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.shell1 {
+    width: 90%;
+    height: 500px;
+    display: flex;
+}
+
+.box {
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    border: 10px solid #fff;
+    background-color: #fff;
+}
+
+.box>img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.box>a>img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.box>span {
+    font: 200 45px '优设标题黑';
+    color: black;
+    text-align: center;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box>a>span {
+    font: 200 35px '优设标题黑';
+    color: black;
+    text-align: center;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    flex-basis: 40%;
+}
+
+.box:hover>img {
+    width: 100%;
+    height: 85%;
+}
+
+/* 予告函 */
+.shell2 {
+    float: left;
+    width: 60%;
+    height: 400px;
+    display: flex;
+}
+
+.box {
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0 20px;
+    /* 阴影效果 */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    border: 10px solid #fff;
+    background-color: #fff;
+}
+
+.box>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.box1 {
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    border: 10px solid #fff;
+    background-color: #fff;
+    color: black;
+    font-size: medium;
+}
+
+.box1>h1 {
+    color: black;
+    font-size: large;
+}
+
+.box1>ul {
+    margin-left: 1.2em;
+    line-height: 1.6;
+    list-style: disc;
+    color: black;
+}
+
+.box1>a {
+    color: red;
+    font-size: large;
+    position: absolute;
+    bottom: 0;
+    transform: translate(0, -50%);
+}
+
+
+/* 图片轮播 */
+.totle {
+    position: relative;
+    perspective: 1600px;
+    top: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b {
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: a 16s infinite cubic-bezier(.7, 0, .17, 1);
+}
+
+.b div {
+    position: absolute;
+    background-size: cover;
+    opacity: .9;
+    width: 400px;
+    height: 250px;
+    transform: rotateY(calc(var(--i)*60deg)) translateZ(600px);
+}
+
+@keyframes a {
+    0% {
+        transform: translateZ(-100px) rotateY(0);
+    }
+
+    17% {
+        transform: translateZ(-100px) rotateY(-60deg);
+    }
+
+    33% {
+        transform: translateZ(-100px) rotateY(-120deg);
+    }
+
+    49% {
+        transform: translateZ(-100px) rotateY(-180deg);
+    }
+
+    66% {
+        transform: translateZ(-100px) rotateY(-240deg);
+    }
+
+    83% {
+        transform: translateZ(-100px) rotateY(-300deg);
+    }
+
+    100% {
+        transform: translateZ(-100px) rotateY(-360deg);
+    }
+}
+
+.c {
+    background-image: url("./img/1.png");
+}
+
+.d {
+    background-image: url("./img/2.jpg");
+}
+
+.e {
+    background-image: url("./img/3.jpg");
+}
+
+.f {
+    background-image: url("./img/4.jpg");
+}
+
+.g {
+    background-image: url("img/5.jpg");
+}
+
+.h {
+    background-image: url("img/6.jpg");
+}

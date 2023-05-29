@@ -1,0 +1,61 @@
+body {
+    background-image: url("./img/background.jpg");
+    background-size: cover;
+    /*选用覆盖取代平铺，不会拉伸图片影响比例*/
+    background-repeat: no-repeat;
+    /*不复制填充*/
+}
+
+.loginCard {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*表格居中设计*/
+    background-color: rgba(255, 255, 255, 0.6);
+    /*取消边框设计，改为使用淡背景色+透明度设计，体现输入框*/
+}
+
+.loginCard-body {
+    padding: 1em 2em;
+}
+
+.loginCard-form-item {
+    margin-top: 1em;
+    /*前面留点空*/
+    width: 20em;
+}
+
+.loginCard-input-label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.loginCard-input-text {
+    display: flex;
+    height: 2em;
+}
+
+.loginCard-input {
+    flex: auto;
+    color: #999999;
+    font-size: 1.1em;
+    border: none;
+    border-bottom: 1px solid currentColor;
+}
+
+.loginCard-form-bottom{
+    text-align: center;
+    margin: 1em 0 0.5em;
+}
+
+.login-button {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5em 2em;
+    margin-left: 1em;
+    background-color: transparent;
+    color: #999999;
+    border: 1px solid currentColor;
+    text-decoration: none;
+}
